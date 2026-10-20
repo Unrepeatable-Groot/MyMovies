@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Dockerfile" />
+  </Folder>
+  <Project Path="MyMovies.Application/MyMovies.Application.csproj" />
+  <Project Path="MyMovies.Core/MyMovies.Core.csproj" />
+  <Project Path="MyMovies.Infrastructure/MyMovies.Infrastructure.csproj" />
+  <Project Path="MyMovies/MyMovies.csproj" />
+</Solution>
