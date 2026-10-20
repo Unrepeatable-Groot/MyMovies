@@ -134,6 +134,17 @@ app.UseCors("AllowAngular");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapGet("/health", async Task<IResult> (AppDbContext db) =>
+{
+    try
+    {
+        if (await db.Database.CanConnectAsync())
+            return Results.Ok(new { status = "ok" });
+    }
+    catch{}
+
+    return Results.StatusCode(503);
+});
 app.Run();
 
 
