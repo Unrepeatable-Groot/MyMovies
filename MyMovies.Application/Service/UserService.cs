@@ -86,9 +86,9 @@ public class UserService : IUserService
         var user = await _userRepository.GetByIdAsync(id)
             ?? throw new Exception($"User with ID {id} does not exist.");
 
-        var result = _passwordHasher.VerifyHashedPassword(user, user.Password, dto.CurrentPassword);
-        if ( result == PasswordVerificationResult.Failed)
-            throw new Exception("Current password is incorrect.");
+        //var result = _passwordHasher.VerifyHashedPassword(user, user.Password, dto.CurrentPassword);
+        //if ( result == PasswordVerificationResult.Failed)
+        //    throw new Exception("Current password is incorrect.");
 
         user.Password = _passwordHasher.HashPassword(user, dto.NewPassword);
         await _userRepository.UpdateAsync(user);
